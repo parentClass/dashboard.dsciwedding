@@ -1,10 +1,10 @@
 function loadRsvps() {
     $.ajax({
         type: "GET",
-        url: "http://localhost:8080/rsvp/list",
+        url: "https://api.dsciwedding.com/rsvp/list",
         success: function(response) {
             j = JSON.parse(response);
-            
+
             j.forEach(rsvp => {
                 $("#rsvp-table-body").append(
                     `
