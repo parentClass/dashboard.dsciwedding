@@ -4,9 +4,7 @@ function loadRsvps() {
         url: "http://localhost:8080/rsvp/list",
         success: function(response) {
             j = JSON.parse(response);
-
-            console.log(j);
-
+            
             j.forEach(rsvp => {
                 $("#rsvp-table-body").append(
                     `
