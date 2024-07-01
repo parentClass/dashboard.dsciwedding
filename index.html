@@ -7,12 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Daniel &amp; Cherrylyn &middot; Dashboard</title>
 
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    hello, world
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-12 table-responsive">
+                <table class="table rsvp-table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Mobile</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Message</th>
+                        <th scope="col">Pasilungan?</th>
+                        <th scope="col">Approved?</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody id="rsvp-table-body">
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
     
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
