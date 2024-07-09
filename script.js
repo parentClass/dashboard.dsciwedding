@@ -54,8 +54,10 @@ function loadRsvps() {
 }
 
 function viewMessage(name, message) {
+    var modalMessage = message.trim().length > 0 ? message : 'No message';
+
     $("#message-modal-title").html(name + " said...")
-    $("#message-modal-body").html(message);
+    $("#message-modal-body").html(modalMessage);
 }
 
 function approve(id, email) {
