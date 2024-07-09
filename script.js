@@ -20,9 +20,9 @@ function loadRsvps() {
                             <td class="${rsvp.is_approved == 1 ? "table-success" : "table-danger"}">
                                 ${rsvp.is_approved == "1" ? "Yes" : "Not yet"}
                             </td>
-                            <td>
+                            <td ${rsvp.is_approved != 1 ? '' : 'style="display: none;"'}>
                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                    <button type="button" class="btn btn-success">Approve</button>
+                                    <button type="button" class="btn btn-success" onclick="approve('${rsvp.id}', '${rsvp.email}')">Approve</button>
                                     <button type="button" class="btn btn-danger">Decline</button>
                                 </div>
                             </td>
@@ -32,6 +32,18 @@ function loadRsvps() {
             });
         }
     });
+}
+
+function approve(id, email) {
+    $.ajax({
+        type: "POST",
+        url: "http://localhost:8080/rsvp/approve",
+        data: JSON.stringify({'id': id, 'email': email}),
+        success: function (response) {
+            console.log(response);
+            j = JSON.parse(response);
+        }
+    })
 }
 
 loadRsvps();
