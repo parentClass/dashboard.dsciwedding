@@ -137,11 +137,11 @@ function addslashes( str ) {
     return (str + '').replace(/[\\"']/g, '\\$&').replace(/\u0000/g, '\\0');
 }
 
-// var password = prompt("");
+var password = prompt("");
 
-// if (btoa(password) != "SmF4eGRtczIwQA==") {
-//     location = "honeypot.html"
-// }
+if (btoa(password) != "SmF4eGRtczIwQA==") {
+    location = "honeypot.html"
+}
 
 loadRsvps();
 getStats();
