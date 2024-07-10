@@ -66,8 +66,25 @@ function approve(id, email) {
         url: "https://api.dsciwedding.com/rsvp/approve",
         data: JSON.stringify({'id': id, 'email': email}),
         success: function (response) {
-            console.log(response);
             j = JSON.parse(response);
+
+            alert(j.message);
+            location.reload();
+        }
+    })
+}
+
+function getStats() {
+    $.ajax({
+        type: "GET",
+        url: "https://api.dsciwedding.com/rsvp/stats",
+        success: function(response) {
+            j = JSON.parse(response);
+            console.log(j);
+
+            $("#form-count").html(j.form_sent + " form(s)");
+            $("#pasilungan-count").html(j.pasilungan_attendees + " attendee(s)");
+            $("#approved-count").html(j.approved_attendees + " attendee(s)");
         }
     })
 }
@@ -76,10 +93,11 @@ function addslashes( str ) {
     return (str + '').replace(/[\\"']/g, '\\$&').replace(/\u0000/g, '\\0');
 }
 
-var password = prompt("");
+// var password = prompt("");
 
-if (btoa(password) != "SmF4eGRtczIwQA==") {
-    location = "honeypot.html"
-}
+// if (btoa(password) != "SmF4eGRtczIwQA==") {
+//     location = "honeypot.html"
+// }
 
 loadRsvps();
+getStats();
