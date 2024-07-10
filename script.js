@@ -123,7 +123,6 @@ function getStats() {
         url: "https://api.dsciwedding.com/rsvp/stats",
         success: function(response) {
             j = JSON.parse(response);
-            console.log(j);
 
             $("#form-count").html(j.form_sent + " form(s)");
             $("#pasilungan-count").html(j.pasilungan_attendees + " attendee(s)");
