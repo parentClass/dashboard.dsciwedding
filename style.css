@@ -1,4 +1,9 @@
 #rsvp-table th,
 #rsvp-table td {
-    text-align: left;
+    text-align: left !important;
+}
+
+#declined-table th,
+#declined-table td {
+    text-align: left !important;
 }
